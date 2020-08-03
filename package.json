@@ -1,0 +1,21 @@
+{
+  "name": "pic-crop",
+  "version": "1.0.1",
+  "description": "Mac app to access and crop images",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "crop"
+  ],
+  "author": "ujw0l",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^9.1.2"
+  },
+  "dependencies": {
+    "path": "^0.12.7",
+    "js-crop": "^1.5.0"
+  }
+}
