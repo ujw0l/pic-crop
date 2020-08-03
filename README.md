@@ -11,7 +11,7 @@
   </a>
 </p>
 
-> Electron js app for Mac
+> Electron js app for Mac for picture cropping
 
 ## Install
 
