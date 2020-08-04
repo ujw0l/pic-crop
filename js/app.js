@@ -1,8 +1,6 @@
 window.addEventListener('load',()=> {
-    new jsCrop('#upload-img');
+    var jCrop = new jsCrop('#upload-img');
 
-
-    
     document.querySelector("#browse-image").addEventListener('click',()=>{
         document.querySelector("#upload-img").click();
 
@@ -14,15 +12,26 @@ window.addEventListener('load',()=> {
     bodyZone.addEventListener('drop',(event)=>{
     
         event.preventDefault();
-        let file = event.dataTransfer.items[0].getAsFile();
+        let img = event.dataTransfer.files[0]
+       
+       if(FileReader){
+                
+           let reader =  new FileReader();
 
-        console.log(file);
+           reader.readAsDataURL(img);
+           reader.addEventListener('load',event=>{ 
+
+            let dropedImg = new Image();
+              dropedImg.src = event.target.result;
+              dropedImg.addEventListener('load', event=>  jCrop.createOverlay(event.target));
+            console.log(event.target.result);
+           
+           });
+              
+       }
+        
 
     })
-
-
-   
-
 
 });
 
