@@ -3,19 +3,19 @@
   <head>
     <meta charset="UTF-8">
     <title>Pic Crop</title>
-    <script type:"text/javascript" src="js/js-crop.js"></script>
-    <script type:"text/javascript" src="js/app.js"></script>
+    <link rel="stylesheet" href="assets/css/app.css"/>
+    <script type:"text/javascript" src="assets/js/js-crop.js"></script>
+    <script type:"text/javascript" src="assets/js/app.js"></script>
     <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
 
 
   </head>
   <body style="width:100%;height:100%;" >
-    <div id="image-drop"  ></div>
-    <h1>Pic Crop</h1>
-    
-        <a id="browse-image" href="javascript:void(0)" >Browse Image</a>
-        <div style="display: none;"> <input id="upload-img" type="file" accept="image/*" /></div>
+    <div id="image-load">
+
+        <p></p><a id="browse-image" href="javascript:void(0)" >Browse </a> or  drop image. 
+        <div id="hide-input"> <input id="upload-img" type="file" accept="image/*" /></div>
     </div>
   </body>
   

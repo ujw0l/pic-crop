@@ -6,6 +6,8 @@ function createWindow () {
   const win = new BrowserWindow({
     width: 1000,
     height: 700,
+    frame: false,
+    backgroundColor: '#2e2c29' ,
     webPreferences: {
       nodeIntegration: true
     }
@@ -20,11 +22,11 @@ function createWindow () {
 
 
 app.whenReady().then(()=>{
-    tray = new Tray (path.join(__dirname, 'icon/tray-icon.png') )
+    tray = new Tray (path.join(__dirname, 'assets/icon/tray-icon.png') )
     
   
     const contextMenu = Menu.buildFromTemplate([
-      { label: 'Demo', click:  ()=> console.log("Demo") },
+      { label: 'About', click:  ()=> app.showAboutPanel() },
       { label: 'Quit', click:  ()=> app.quit() }
       ])
    
