@@ -7,7 +7,7 @@
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
   <a href="https://twitter.com/bktujwol" target="_blank">
-    <img alt="Twitter: bktujwol" src="https://img.shields.io/twitter/follow/bktujwol.svg?style=social" />
+    <img alt="Twitter: bktujwol" src="https://img.shields.io/twitter/follow/BastakotiUjwol.svg?style=social" />
   </a>
 </p>
 
@@ -29,8 +29,8 @@ npm start
 
 👤 **ujw0l**
 
-* Website: ujw0l
-* Twitter: [@bktujwol](https://twitter.com/bktujwol)
+* Website: ujw0l.github.io
+* Twitter: [@BastakotiUjwol](https://twitter.com/bktujwol)
 * Github: [@ujw0l](https://github.com/ujw0l)
 
 ## Show your support

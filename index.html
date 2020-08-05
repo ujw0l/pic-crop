@@ -2,20 +2,21 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
     <title>Pic Crop</title>
-    <script type:"text/javascript" src="js/js-crop.js"></script>
+    <link rel="stylesheet" href="assets/css/app.css"/>
+    <script type:"text/javascript" src="assets/js/js-crop.js"></script>
+    <script type:"text/javascript" src="assets/js/app.js"></script>
     <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-    <script type:"text/javascript">
-        window.addEventListener('load',()=> new jsCrop('#upload-demo'))
-        </script>
+
+
   </head>
   <body>
-    <h1>Pic Crop</h1>
-    <div>
-        <h3> Access  Image</h3>
-        <br><br>
-         <input id="upload-demo" type="file" accept="image/*" />
+    <div id="image-load">
+
+        <p></p><a id="browse-image" href="javascript:void(0)" >Browse </a> or  drop image. 
+        <div id="hide-input"> <input id="upload-img" type="file" accept="image/*" /></div>
     </div>
   </body>
   
