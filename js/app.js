@@ -3,7 +3,6 @@ window.addEventListener('load',()=> {
 
     document.querySelector("#browse-image").addEventListener('click',()=>{
         document.querySelector("#upload-img").click();
-
     });
 
     let  bodyZone =  document.querySelector('body');
@@ -24,13 +23,9 @@ window.addEventListener('load',()=> {
             let dropedImg = new Image();
               dropedImg.src = event.target.result;
               dropedImg.addEventListener('load', event=>  jCrop.createOverlay(event.target));
-            console.log(event.target.result);
-           
            });
               
        }
-        
-
     })
 
 });

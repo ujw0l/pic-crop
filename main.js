@@ -4,9 +4,8 @@ const path = require ('path')
 function createWindow () {
   // Create the browser window.
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
-    icon:__dirname+'/icon/icon.png',
+    width: 1000,
+    height: 700,
     webPreferences: {
       nodeIntegration: true
     }
@@ -14,15 +13,19 @@ function createWindow () {
 
   // and load the index.html of the app.
   win.loadFile('index.html')
+
+  // Open the DevTools.
+  //win.webContents.openDevTools()
 }
 
 
 app.whenReady().then(()=>{
     tray = new Tray (path.join(__dirname, 'icon/tray-icon.png') )
     
-    
+  
     const contextMenu = Menu.buildFromTemplate([
-      { label: 'Quit', click:  ()=>alert('aye') }
+      { label: 'Demo', click:  ()=> console.log("Demo") },
+      { label: 'Quit', click:  ()=> app.quit() }
       ])
    
 	// tray icon hover text
