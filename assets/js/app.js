@@ -1,9 +1,14 @@
+// In renderer process (web page).
+const { ipcRenderer} = require('electron')
+
+
 window.addEventListener('load',()=> {
     var jCrop = new jsCrop('#upload-img');
+    let uploadBtn =   document.querySelector("#upload-img")
+    let browseImg =  document.querySelector("#browse-image");
 
-    document.querySelector("#browse-image").addEventListener('click',()=>{
-        document.querySelector("#upload-img").click();
-    });
+    browseImg.addEventListener('click',()=>uploadBtn.click());
+        
 
     let  bodyZone =  document.querySelector('body');
     bodyZone.addEventListener("dragover",(event)=>event.preventDefault());
@@ -28,5 +33,19 @@ window.addEventListener('load',()=> {
         bodyZone.style =`height:${window.innerHeight}px;width:${window.innerWidth}px;`;
     })
 
+    ipcRenderer.on('open-file', (event,args) =>{
+
+       let closeBtn =  document.querySelector('#js-crop-close-btn')
+        if(null != closeBtn){ closeBtn.click()};
+
+        let ext = args[1] == '.jpeg' || args[1] == '.jpg' ? 'jpeg' : 'png';
+        let img = new Image();
+        img.src = `data:image/${ext};base64,`+args[0];
+        img.addEventListener('load',event=>jCrop.createOverlay(event.target));
+    })
 });
+
+
+
+// In renderer process (web page).
 
