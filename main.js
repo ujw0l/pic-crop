@@ -1,4 +1,4 @@
-const { app, BrowserWindow,Menu,Tray,screen,dialog,shell} = require('electron');
+const { app, BrowserWindow,Menu,Tray,screen,dialog} = require('electron');
 const path = require ('path')
 const fs = require('fs');
 
@@ -51,13 +51,6 @@ function createWindow () {
               }).catch(err => {
                 console.log(err)
               });
-                
-            
-           
-            /*
-            const focusedWindow = BrowserWindow.getFocusedWindow();
-            focusedWindow.webContents.send('open-file');
-          */
           }
         },
         {
@@ -101,8 +94,6 @@ function createWindow () {
 
 Menu.setApplicationMenu(menu)
 
-  // Open the DevTools.
-  win.webContents.openDevTools()
 }
 
 

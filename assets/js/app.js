@@ -6,13 +6,14 @@ window.addEventListener('load',()=> {
     var jCrop = new jsCrop('#upload-img');
     let uploadBtn =   document.querySelector("#upload-img")
     let browseImg =  document.querySelector("#browse-image");
-
+    let imgLoadDiv = document.querySelector('#image-load');
     browseImg.addEventListener('click',()=>uploadBtn.click());
         
 
     let  bodyZone =  document.querySelector('body');
     bodyZone.addEventListener("dragover",(event)=>event.preventDefault());
     bodyZone.style =`height:${window.innerHeight}px;width:${window.innerWidth}px;`;
+    imgLoadDiv.style =`height:25px;width 200px;margin-left:${(window.innerWidth-200)/2}px;margin-top:${(window.innerHeight-25)/2}px`;
     bodyZone.addEventListener('drop',(event)=>{
         event.preventDefault();
         let img = event.dataTransfer.files[0]
@@ -31,6 +32,7 @@ window.addEventListener('load',()=> {
 
     window.addEventListener('resize',()=>{
         bodyZone.style =`height:${window.innerHeight}px;width:${window.innerWidth}px;`;
+        imgLoadDiv.style =`margin-left:${(window.innerWidth-200)/2}px;margin-top:${(window.innerHeight-25)/2}px`;
     })
 
     ipcRenderer.on('open-file', (event,args) =>{
