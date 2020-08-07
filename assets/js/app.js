@@ -1,13 +1,19 @@
+// In renderer process (web page).
+const { ipcRenderer} = require('electron')
+
+
 window.addEventListener('load',()=> {
     var jCrop = new jsCrop('#upload-img');
-
-    document.querySelector("#browse-image").addEventListener('click',()=>{
-        document.querySelector("#upload-img").click();
-    });
+    let uploadBtn =   document.querySelector("#upload-img")
+    let browseImg =  document.querySelector("#browse-image");
+    let imgLoadDiv = document.querySelector('#image-load');
+    browseImg.addEventListener('click',()=>uploadBtn.click());
+        
 
     let  bodyZone =  document.querySelector('body');
     bodyZone.addEventListener("dragover",(event)=>event.preventDefault());
     bodyZone.style =`height:${window.innerHeight}px;width:${window.innerWidth}px;`;
+    imgLoadDiv.style =`height:${window.innerHeight}px;width:${window.innerWidth}px;padding-top:${(window.innerHeight/2)-12.5}px;padding-left:${(window.innerWidth/2)-125}px;`;
     bodyZone.addEventListener('drop',(event)=>{
         event.preventDefault();
         let img = event.dataTransfer.files[0]
@@ -26,7 +32,22 @@ window.addEventListener('load',()=> {
 
     window.addEventListener('resize',()=>{
         bodyZone.style =`height:${window.innerHeight}px;width:${window.innerWidth}px;`;
+        imgLoadDiv.style =`height:${window.innerHeight}px;width:${window.innerWidth}px;padding-top:${(window.innerHeight/2)-12.5}px;padding-left:${(window.innerWidth/2)-125}px;`;
     })
 
+    ipcRenderer.on('open-file', (event,args) =>{
+
+       let closeBtn =  document.querySelector('#js-crop-close-btn')
+        if(null != closeBtn){ closeBtn.click()};
+
+        let ext = args[1] == '.jpeg' || args[1] == '.jpg' ? 'jpeg' : 'png';
+        let img = new Image();
+        img.src = `data:image/${ext};base64,`+args[0];
+        img.addEventListener('load',event=>jCrop.createOverlay(event.target));
+    })
 });
+
+
+
+// In renderer process (web page).
 
