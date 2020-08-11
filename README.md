@@ -15,7 +15,7 @@
   </a>
 </p>
 
->  Mac app for picture cropping, written in electron js. App is in beta phase
+>  Mac app for picture cropping, written in electron js. 
 
 ## Install
 
