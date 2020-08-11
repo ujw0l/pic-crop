@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="https://ujwolbastakoti.files.wordpress.com/2020/08/pic-crop-icon.png" width="150" title="hover text">
+  <img src="https://ujwolbastakoti.files.wordpress.com/2020/08/pic-crop-logo.png" width="150" title="hover text">
 </p>
 <h1 align="center">Welcome to pic-crop 👋</h1>
 <p>
