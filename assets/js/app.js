@@ -12,7 +12,7 @@ window.addEventListener('load',()=> {
 
     let  bodyZone =  document.querySelector('body');
     bodyZone.addEventListener("dragover",(event)=>event.preventDefault());
-    bodyZone.style =`height:${window.innerHeight}px;width:${window.innerWidth}px;`;
+    bodyZone.style =`height:${window.innerHeight}px;width:${window.innerWidth}px;overflow:hidden;`;
     imgLoadDiv.style =`height:${window.innerHeight}px;width:${window.innerWidth}px;padding-top:${(window.innerHeight/2)-12.5}px;padding-left:${(window.innerWidth/2)-125}px;`;
     bodyZone.addEventListener('drop',(event)=>{
         event.preventDefault();
@@ -31,7 +31,7 @@ window.addEventListener('load',()=> {
 
 
     window.addEventListener('resize',()=>{
-        bodyZone.style =`height:${window.innerHeight}px;width:${window.innerWidth}px;`;
+        bodyZone.style =`height:${window.innerHeight}px;width:${window.innerWidth}px;overflow:hidden;`;
         imgLoadDiv.style =`height:${window.innerHeight}px;width:${window.innerWidth}px;padding-top:${(window.innerHeight/2)-12.5}px;padding-left:${(window.innerWidth/2)-125}px;`;
     })
 
