@@ -1,13 +1,13 @@
 {
   "name": "pic-crop",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "Mac app to access and crop images witten in Electron js",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icon/icon.icns --prune=true --out=release-builds",
-    "package-win": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron Tutorial App\"",    
-    "package-linux": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds"
+    "package-win": "electron-packager . pic-crop --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Pic Crop\"",
+    "package-linux": "electron-packager . pic-crop --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds"
   },
   "repository": {
     "type": "git",
@@ -19,15 +19,13 @@
   "author": "ujw0l",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^9.1.2",
+    "electron": "^9.3.1",
     "electron-packager": "^15.0.0"
   },
   "dependencies": {
     "path": "^0.12.7"
-   
   },
   "bugs": {
     "url": "https://github.com/ujw0l/pic-crop/issues"
   }
-  
 }
