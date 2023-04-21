@@ -19,8 +19,8 @@
   "author": "ujw0l",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^13.6.6",
-    "electron-packager": "^15.0.0"
+    "electron": "^24.1.2",
+    "electron-packager": "^17.1.1"
   },
   "dependencies": {
     "path": "^0.12.7"
