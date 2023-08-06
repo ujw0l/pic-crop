@@ -6,16 +6,15 @@ function createWindow () {
   const { width, height } = screen.getPrimaryDisplay().workAreaSize
   // Create the browser window.
   const win = new BrowserWindow({
-    width: 900,
-    height: 600,
+    width: 1200,
+    height: 900,
     show:false,
     backgroundColor: '#2e2c29' ,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      contextIsolation: false
     }
   })
-
-  
 
   win.once('ready-to-show', () => {
     win.show()
