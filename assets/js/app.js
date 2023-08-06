@@ -3,7 +3,14 @@ const { ipcRenderer} = require('electron')
 
 
 window.addEventListener('load',()=> {
-    var jCrop = new jsCrop('#upload-img');
+    var jCrop = new jsCrop('#upload-img', {  
+        customColor: {
+        overlayBgColor : 'rgba(0,0,0,1)',
+        toolbarBgColor: 'rgba(255,255,255,1)',
+        buttonBgColor: 'rgba(255,255,255,1)' ,
+        buttonFontColor : 'rgba(0,0,0,1)',
+
+    } });
     let uploadBtn =   document.querySelector("#upload-img")
     let browseImg =  document.querySelector("#browse-image");
     let imgLoadDiv = document.querySelector('#image-load');
@@ -23,7 +30,16 @@ window.addEventListener('load',()=> {
            reader.addEventListener('load',event=>{ 
             let dropedImg = new Image();
               dropedImg.src = event.target.result;
-              dropedImg.addEventListener('load', event=>  jCrop.createOverlay(event.target));
+              dropedImg.addEventListener('load', event=>  jCrop.createOverlay(event.target,{
+
+                customColor: {
+                    overlayBgColor : 'rgba(0,0,0,1)',
+                    toolbarBgColor: 'rgba(255,255,255,1)',
+                    buttonBgColor: 'rgba(255,255,255,1)' ,
+                    buttonFontColor : 'rgba(0,0,0,1)',
+            
+                }
+              }));
            });
               
        }
@@ -43,7 +59,15 @@ window.addEventListener('load',()=> {
         let ext = args[1] == '.jpeg' || args[1] == '.jpg' ? 'jpeg' : 'png';
         let img = new Image();
         img.src = `data:image/${ext};base64,`+args[0];
-        img.addEventListener('load',event=>jCrop.createOverlay(event.target));
+        img.addEventListener('load',event=>jCrop.createOverlay(event.target,{ 
+            customColor: {
+                overlayBgColor : 'rgba(0,0,0,1)',
+                toolbarBgColor: 'rgba(255,255,255,1)',
+                buttonBgColor: 'rgba(255,255,255,1)' ,
+                buttonFontColor : 'rgba(0,0,0,1)',
+        
+            }
+         }));
     })
 });
 

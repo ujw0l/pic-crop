@@ -1,6 +1,6 @@
 {
   "name": "pic-crop",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "Mac app to access and crop images witten in Electron js",
   "main": "main.js",
   "scripts": {
@@ -23,6 +23,7 @@
     "electron-packager": "^15.0.0"
   },
   "dependencies": {
+    "js-crop": "^2.5.5",
     "path": "^0.12.7"
   },
   "bugs": {

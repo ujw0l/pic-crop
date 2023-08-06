@@ -23,9 +23,16 @@
 npm install pic-crop
 ```
 
+```sh
+Cd pic-crop
+npm install 
+```
+
 ## Usage
 
 ```sh
+Run App
+
 npm start
 ```
 
