@@ -19,7 +19,7 @@
   "author": "ujw0l",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^22.3.25",
+    "electron": "^39.8.5",
     "electron-packager": "^15.0.0"
   },
   "dependencies": {
